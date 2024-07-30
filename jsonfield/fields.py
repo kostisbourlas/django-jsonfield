@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 from django.conf import settings
 from django.db import models
 from django.db.models.lookups import Exact, IExact, In, Contains, IContains
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 import six
 
 from .utils import _resolve_object_path
@@ -162,6 +162,7 @@ class TypedJSONField(JSONField):
     """
 
     """
+
     def __init__(self, *args, **kwargs):
         self.json_required_fields = kwargs.pop('required_fields', {})
         self.json_validators = kwargs.pop('validators', [])
